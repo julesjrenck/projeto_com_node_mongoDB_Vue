@@ -21,3 +21,23 @@ exports.registerNewUser = async (req, res) => {
       return res.status(400).json({ err });
     }
   };
+
+  exports.loginUser = async (req, res) => {
+    try {
+       const email = req.body.email;
+       const password = req.body.password;
+       const user = await User.findByCredentials(email, password);
+
+       if (!user) {
+            return res.status(401).json({ error: 'Erro ao realizar o Login! Verifique suas credenciais'});
+       }
+
+       const token = await user.generateAuthToken();
+       return res
+        .status(201)
+        .json({ message: "Usuário(a) logado com sucesso!", user, token });
+
+      } catch (err) {
+        return res.status(400).json({ err });
+      }
+  };  
