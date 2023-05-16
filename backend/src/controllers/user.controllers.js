@@ -41,3 +41,7 @@ exports.registerNewUser = async (req, res) => {
         return res.status(400).json({ err });
       }
   };  
+
+  exports.returnUserProfile = async (req, res) => {
+    await res.json(req.userData);
+  };   
