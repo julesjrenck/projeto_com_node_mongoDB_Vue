@@ -7,6 +7,7 @@
           style="margin-top: 70px; height: auto; padding-top: 100px !important"
           v-on:submit.prevent="loginSubmitUserForm()"
         >
+        <div class="form-group">
           <input
             aria-label="email"
             type="email"
@@ -14,7 +15,18 @@
             class="form-control mb-5"
             placeholder="Digite o seu E-mail"
             v-model="loginForm.email"
+            :class="{
+                'is-invalid': isSubmitted && $v.loginForm.email.$error,
+            }"
           />
+          <div
+              v-if="isSubmitted && !$v.loginForm.email.required"
+              class="invalid-feedback"
+          >
+              O campo e-mail é obrigatório!
+          </div>
+        </div>
+        <div class="form-group">  
           <input
             aria-label="password"
             type="password"
@@ -22,7 +34,17 @@
             class="form-control mb-5"
             placeholder="Digite a sua senha"
             v-model="loginForm.password"
+            :class="{
+                'is-invalid': isSubmitted && $v.loginForm.password.$error,
+            }"
           />
+          <div
+              v-if="isSubmitted && !$v.loginForm.password.required"
+              class="invalid-feedback"
+            >
+              O campo password é obrigatório!
+          </div>
+        </div>  
           <p class="center">
             Não tem uma conta cadastrada?<router-link to="/register">
               Cadastre Aqui</router-link
