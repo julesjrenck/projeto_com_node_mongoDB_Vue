@@ -26,7 +26,7 @@
               O campo e-mail é obrigatório!
           </div>
         </div>
-        <div class="form-group">  
+        <div class="form-group">
           <input
             aria-label="password"
             type="password"
@@ -44,7 +44,7 @@
             >
               O campo password é obrigatório!
           </div>
-        </div>  
+        </div>
           <p class="center">
             Não tem uma conta cadastrada?<router-link to="/register">
               Cadastre Aqui</router-link

@@ -25,7 +25,7 @@ export default {
       if (this.$v.$invalid) {
         return;
       }
-      alert("Sucesso!")
+      alert('Sucesso!');
     },
 
     async submitLoginUser() {},

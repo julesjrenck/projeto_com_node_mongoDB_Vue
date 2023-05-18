@@ -42,5 +42,4 @@ router.afterEach((to, from) => {
   NProgress.done();
 });
 
-
 export default router;

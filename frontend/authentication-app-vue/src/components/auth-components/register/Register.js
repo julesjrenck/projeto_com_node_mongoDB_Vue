@@ -12,6 +12,6 @@ export default {
   methods: {
     registerSubmitUserForm() {},
 
-    async submitRegisterUser() {}
-  }  
+    async submitRegisterUser() {},
+  },
 };
