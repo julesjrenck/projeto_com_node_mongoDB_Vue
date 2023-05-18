@@ -26,7 +26,7 @@
               >
                 O campo nome é obrigatório!
               </div>
-            </div>  
+            </div>
             <div class="form-group">
               <input
                 aria-label="email"
@@ -46,7 +46,7 @@
               >
                   O campo e-mail é obrigatório!
               </div>
-            </div>  
+            </div>
             <input
               aria-label="password"
               type="password"
