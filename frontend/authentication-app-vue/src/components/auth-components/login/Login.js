@@ -27,7 +27,6 @@ export default {
       }
       alert('Sucesso!');
     },
-
     async submitLoginUser() {},
   },
 };
