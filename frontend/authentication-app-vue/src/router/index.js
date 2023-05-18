@@ -14,6 +14,9 @@ const routes = [
     path: '/home',
     name: 'home',
     component: () => import('../components/auth-components/home/HomeComponent.vue'),
+    meta: {
+      requireAuth: true,
+    },
   },
   {
     path: '/register',
@@ -40,6 +43,21 @@ router.beforeResolve((to, from, next) => {
 router.afterEach((to, from) => {
   // Completando a animação da rota no NProgress
   NProgress.done();
+});
+
+// Lógica inerente ao realizar o 'Log out' remover o token no local Storage:
+router.beforeEach((to, from, next) => {
+  if (to.matched.some((record) => record.meta.requireAuth)) {
+    if (localStorage.getItem('jwt') == null) {
+      next({
+        path: '/',
+      });
+    } else {
+      next();
+    }
+  } else {
+    next();
+  }
 });
 
 export default router;
