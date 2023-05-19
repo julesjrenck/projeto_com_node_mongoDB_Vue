@@ -10,7 +10,7 @@
         >
           <ul class="navbar-nav">
             <li class="nav-item active">
-              <a class="nav-link" @click="logOutUser">Log Out</a>
+              <a class="nav-link" aria-hidden="true" @click="logOutUser">Log Out</a>
             </li>
           </ul>
         </div>
